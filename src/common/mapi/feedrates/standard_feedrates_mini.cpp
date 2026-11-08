@@ -11,11 +11,11 @@ static constexpr EnumArray<Extruder, feedRate_t, Extruder::_count> base_e_feedra
     { Extruder::pause_prime, 10.0f },
     { Extruder::retract, 66.0f },
     { Extruder::deretract, 18.0f },
-    { Extruder::filament_unload, 80.0f },
-    { Extruder::filament_slow_load, 10.0f },
-    { Extruder::filament_fast_load, 80.0f },
+    { Extruder::filament_unload, 27.0f },
+    { Extruder::filament_slow_load, 5.4f },
+    { Extruder::filament_fast_load, 18.0f },
     { Extruder::filament_assisted, 3.0f },
-    { Extruder::advanced_pause_purge, 3.0f },
+    { Extruder::advanced_pause_purge, 2.7f },
 };
 } // namespace
 

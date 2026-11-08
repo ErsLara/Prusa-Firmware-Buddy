@@ -590,26 +590,26 @@
  * Requires an LCD display.
  */
 #if HAS_PAUSE()
-    #define PARK_PAUSE_PRIME_LENGTH 4 // (mm) Length of a priming "poop".
+    #define PARK_PAUSE_PRIME_LENGTH 1 // (mm) Length of a priming "poop".
 
-    #define STANDARD_RETRACT_LENGTH 8 // (mm) Initial retract.
+    #define STANDARD_RETRACT_LENGTH 1 // (mm) Initial retract.
 // This retract is done immediately, before parking the nozzle.
 
-    #define FILAMENT_CHANGE_UNLOAD_ACCEL 1250 // (mm/s^2) Lower acceleration may allow a faster feedrate.
-    #define FILAMENT_CHANGE_UNLOAD_LENGTH 400 // (mm) The length of filament for a complete unload.
+    #define FILAMENT_CHANGE_UNLOAD_ACCEL 1100 // (mm/s^2) Lower acceleration may allow a faster feedrate.
+    #define FILAMENT_CHANGE_UNLOAD_LENGTH 90 // (mm) The length of filament for a complete unload.
 //   For Bowden, the full length of the tube and nozzle.
 //   For direct drive, the full length of the nozzle.
 //   Set to 0 for manual unloading.
 
-    #define FILAMENT_CHANGE_SLOW_LOAD_LENGTH 40 // (mm) Slow length, to allow time to insert material.
+    #define FILAMENT_CHANGE_SLOW_LOAD_LENGTH 30 // (mm) Slow length, to allow time to insert material.
 // 0 to disable start loading and skip to fast load only
 
-    #define FILAMENT_CHANGE_FAST_LOAD_ACCEL 625 // (mm/s^2) Lower acceleration may allow a faster feedrate.
-    #define FILAMENT_CHANGE_FAST_LOAD_LENGTH 320 // (mm) Load length of filament, from extruder gear to nozzle.
+    #define FILAMENT_CHANGE_FAST_LOAD_ACCEL 100 // (mm/s^2) Lower acceleration may allow a faster feedrate.
+    #define FILAMENT_CHANGE_FAST_LOAD_LENGTH 50 // (mm) Load length of filament, from extruder gear to nozzle.
 //   For Bowden, the full length of the tube and nozzle.
 //   For direct drive, the full length of the nozzle.
 
-    #define ADVANCED_PAUSE_PURGE_LENGTH 50 // (mm) Length to extrude after loading.
+    #define ADVANCED_PAUSE_PURGE_LENGTH 21 // (mm) Length to extrude after loading.
 #endif
 
 // @section tmc
@@ -744,9 +744,9 @@
     #endif
 
     #if AXIS_IS_TMC(E0)
-        #define E0_CURRENT 400 //520
+        #define E0_CURRENT 400 //Although Orbiter V2 RMS Current is 850 mA, currently it is overheating the PCB. Back to 400 mA.
         #define E0_MICROSTEPS 16 //32
-        #define E0_RSENSE 0.22f
+        #define E0_RSENSE 0.17f //Update of BuddyBoard Extruder TMC2209 Shunts R73 and R75 to 170mR 1% 1206 - ISABELLENHUETTE SMK-R170-1.0 - Allowing Stepper motor current of over 1.2A Nominal
     #endif
 
     #if AXIS_IS_TMC(E1)
